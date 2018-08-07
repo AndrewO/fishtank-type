@@ -1,0 +1,62 @@
+@import "./type.scss";
+
+$_blp-cdn-fonts: (
+    "Open Sans": (
+        regular: "https://assets.bwbx.io/font-service/fonts/OpenSans-Regular-d7d5d4588a.ttf",
+        italic: "https://assets.bwbx.io/font-service/fonts/OpenSans-Italic-bf243bcbf8.ttf",
+        semibold: "https://assets.bwbx.io/font-service/fonts/OpenSans-SemiBold-e1c83f9474.ttf",
+        semibold-italic: "https://assets.bwbx.io/font-service/fonts/OpenSans-SemiBoldItalic-fc17ea62c9.ttf",
+        bold: "https://assets.bwbx.io/font-service/fonts/OpenSans-Bold-f5331cb637.ttf",
+        bold-italic: "https://assets.bwbx.io/font-service/fonts/OpenSans-BoldItalic-f40598dd8e.ttf"
+    ),
+    "Avenir Next": (
+        regular: "https://assets.bwbx.io/font-service/fonts/AvenirNextPForBBG-Regular-eb3bb1b816.woff2",
+        italic: "https://assets.bwbx.io/font-service/fonts/AvenirNextPForBBG-Italic-e9ec6831dd.woff2",
+        semibold: "https://assets.bwbx.io/font-service/fonts/AvenirNextPForBBG-Demi-b9b4abf0ea.woff2",
+        semibold-italic: "https://assets.bwbx.io/font-service/fonts/AvenirNextPForBBG-DemiItalic-15a385ce88.woff2",
+        bold: "https://assets.bwbx.io/font-service/fonts/AvenirNextPForBBG-Bold-384c1e7c36.woff2",
+        bold-italic: "https://assets.bwbx.io/font-service/fonts/AvenirNextPForBBG-BoldItalic-eff1beaa5a.woff2"
+    )
+);
+
+// Override this variable to use something other than the BLP CDN for fonts.
+$FT-FONTS: $_blp-cdn-fonts !default;
+
+@each $font-name, $font-variants in $FT-FONTS {
+    @font-face {
+        font-family: $font-name;
+        src: url(map-get($font-variants, regular));
+    }
+
+    @font-face {
+        font-family: $font-name;
+        font-style: italic;
+        src: url(map-get($font-variants, italic));
+    }
+
+    @font-face {
+        font-family: $font-name;
+        font-weight: $fontweight-semi;
+        src: url(map-get($font-variants, semibold));
+    }
+
+    @font-face {
+        font-family: $font-name;
+        font-weight: $fontweight-semi;
+        font-style: italic;
+        src: url(map-get($font-variants, semibold-italic));
+    }
+
+    @font-face {
+        font-family: $font-name;
+        font-weight: $fontweight-bold;
+        src: url(map-get($font-variants, bold));
+    }
+
+    @font-face {
+        font-family: $font-name;
+        font-weight: $fontweight-bold;
+        font-style: italic;
+        src: url(map-get($font-variants, bold-italic));
+    }
+}

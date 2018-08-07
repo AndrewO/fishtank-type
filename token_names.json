@@ -1,10 +1,4 @@
 [
-  "avenir-bold",
-  "avenir-bold-italic",
-  "avenir-demibold",
-  "avenir-demibold-italic",
-  "avenir-italic",
-  "avenir-regular",
   "font-accent",
   "font-primary",
   "fontsize-base-lg",
@@ -32,11 +26,5 @@
   "lineheight-heading-md",
   "lineheight-heading-sm",
   "lineheight-small",
-  "opensans-bold",
-  "opensans-bold-italic",
-  "opensans-italic",
-  "opensans-regular",
-  "opensans-semibold",
-  "opensans-semibold-italic",
   "root-fontsize"
 ]
